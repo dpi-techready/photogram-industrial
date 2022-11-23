@@ -22,4 +22,10 @@
 class FollowRequest < ApplicationRecord
   belongs_to :recipient, class_name: "User"
   belongs_to :sender, class_name: "User"
+
+  # scope :accepted, -> { where(status: "accepted") }
+  # scope :not_accepted, -> { where.not(status: "accepted") }
+
+  # we can use enum to do the as as above
+  enum status: { pending: "pending", rejected: "rejected", accepted: "accepted" }
 end
