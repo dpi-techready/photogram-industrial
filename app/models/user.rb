@@ -33,7 +33,8 @@ class User < ApplicationRecord
   # has_many :comments, foreign_key: "author_id"
   has_many :comments, foreign_key: :author_id
 
-  has_many :sent_follow_requests, foreign_key: :sender_id, class_name: "FollowRequest"
+  # "dependent: :destroy" makes sure that children of a parent element are also destroyed when a parent is destroyed
+  has_many :sent_follow_requests, foreign_key: :sender_id, class_name: "FollowRequest", dependent: :destroy
 
   # using scopes in associations (-> {})
   # has_many :accepted_sent_follow_requests, -> { where(status: "accepted") }, foreign_key: :sender_id, class_name: "FollowRequest"
