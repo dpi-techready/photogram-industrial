@@ -1,17 +1,17 @@
+<h1>
+  <%= @user.username %>
+</h1>
 
-  <h1>
-    <%= @user.username%>
-  </h1>
-
-  <h2>
-    Own photos
-  </h2>
+<h2>
+  Own photos
+</h2>
 
   <% current_user.own_photos.each do |photo| %>
     <div class="row mb-4">
       <div class="col-md-6 offset-md-3">
         <div class="card">
-          <%= image_tag photo.image, class: "card-img-top" %>
+          <%#= image_tag photo.image, class: "card-img-top" %>
+          <%#= image_tag skip_pipeline: true, photo.image, class: "card-img-top" %>
 
           <div class="card-body">
             <h5 class="card-title"><%= photo.owner.username %></h5>
@@ -28,17 +28,15 @@
                   <p><%= comment.body %></p>
                 </div>
               </div> 
-
             </li>
-          
           <% end %>
-
         </ul> 
 
           <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <%#= render "comments/form", comment: Comment.new(photo_id: photo.id) %>
+            <%= render "comments/form", comment: photo.comments.build %>
           </div>  
+          
         </div>
       </div> 
     </div>

@@ -1,13 +1,8 @@
 require "active_support/core_ext/integer/time"
 
-# [SOLVED]-IMAGE IN ASSET PIPELINE NOT FOUND-RUBY
-config.serve_static_assets = true
-config.assets.compile = true
-
-
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  
   # Code is not reloaded between requests.
   config.cache_classes = true
 
