@@ -1,3 +1,5 @@
+# require "open-uri"
+
 task sample_data: :environment do
   starting = Time.now
   p "Creating sample data"
@@ -58,22 +60,31 @@ task sample_data: :environment do
     rand(15).times do
       photo = user.own_photos.create(
         caption: Faker::Quote.jack_handey,
-        image: "https//robohash.org/#{rand(9999)}"
+        image: "https://robohash.org/#{rand(9999)}"
+        # image: File.open("https://robohash.org/#{rand(9999)}")
+        # image: File.open("https://robohash.org/988")
+        # image: URI.open("https://robohash.org/988").read
+        # image: URI.open("https://sienaconstruction.com/wp-content/uploads/2017/05/test-image.jpg").read
+
+        # image: "https://robohash.org/988"
+
       )
+      # p photo.errors.full_messages
+      if photo.id != nil
+        user.followers.each do |follower|
+          if rand < 0.5
+            photo.fans << follower
+          end  
 
-      user.followers.each do |follower|
-        if rand < 0.5
-          photo.fans << follower
-        end  
-
-        if rand < 0.25
-          photo.comments.create(
-            body: Faker::Quote.jack_handey,
-            author: follower
-          )
+          if rand < 0.25
+            photo.comments.create(
+              body: Faker::Quote.jack_handey,
+              author: follower
+            )
+            end
           end
         end
-      end
+      end 
     end
 
   ending = Time.now
