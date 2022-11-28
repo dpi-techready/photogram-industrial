@@ -36,6 +36,12 @@ task sample_data: :environment do
   usernames << "marcelina"
   usernames << "curt"
   usernames << "randy"
+  usernames << "johnsie"
+  usernames << "stephan"
+  usernames << "theola"
+  usernames << "rodney"
+  usernames << "lashunda"
+  usernames << "jorge"
 
 
   # 12.times do
@@ -44,6 +50,7 @@ task sample_data: :environment do
     # name = Faker::Name.first_name.downcase
     # u = User.create(
       User.create(
+      avatar: "https://robohash.org/#{rand(9999)}?set=set3",
       # email: "#{name}@example.com",
       email: "#{username}@example.com",
       # username: name,
