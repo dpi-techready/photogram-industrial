@@ -12,10 +12,11 @@
         </li>
         <li class="nav-item">
           <!--<a class="nav-link" href="#">Liked photos</a>-->
-          <%= link_to "Liked Photos", liked_photos_path(@user.username), class: "nav-link"%>
+          <%= link_to "Liked photos", liked_photos_path(@user.username), class: "nav-link"%>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Feed</a>
+          <!--<a class="nav-link" href="#">Feed</a>-->
+          <%= link_to "Feed", feed_path(@user.username), class: "nav-link" %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Followers</a>
@@ -28,7 +29,7 @@
   </div>
 </div>  
 
-<%= current_user.own_photos.count %>
+<%#= current_user.own_photos.count %>
 
   <%# current_user.own_photos.each do |photo| %>
   <% current_user.own_photos.each do |zebra| %>

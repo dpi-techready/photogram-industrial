@@ -16,6 +16,27 @@ task sample_data: :environment do
 
   usernames << "alice"
   usernames << "bob"
+  usernames << "emilia"
+  usernames << "carol"
+  usernames << "ramon"
+  usernames << "daren"
+  usernames << "albertina"
+  usernames << "doug"
+  usernames << "inez"
+  usernames << "margret"
+  usernames << "gustavo"
+  usernames << "debi"
+  usernames << "yong"
+  usernames << "ricki"
+  usernames << "elliot"
+  usernames << "stanford"
+  usernames << "gradys"
+  usernames << "kerry"
+  usernames << "vance"
+  usernames << "marcelina"
+  usernames << "curt"
+  usernames << "randy"
+
 
   # 12.times do
   # 10.times do
