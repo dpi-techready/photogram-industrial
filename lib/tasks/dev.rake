@@ -24,6 +24,7 @@ task sample_data: :environment do
   usernames << "doug"
   usernames << "inez"
   usernames << "margret"
+
   usernames << "gustavo"
   usernames << "debi"
   usernames << "yong"
@@ -34,6 +35,7 @@ task sample_data: :environment do
   usernames << "kerry"
   usernames << "vance"
   usernames << "marcelina"
+
   usernames << "curt"
   usernames << "randy"
   usernames << "johnsie"
@@ -44,7 +46,39 @@ task sample_data: :environment do
   usernames << "jorge"
   usernames << "lin"
   usernames << "myrl"
+
   usernames << "breanna"
+  usernames << "andreas"
+  usernames << "johnny"
+  usernames << "leonard"
+  usernames << "laverne"
+  usernames << "lilliam"
+  usernames << "samuel"
+  usernames << "dana"
+  usernames << "jewel"
+  usernames << "kerstin"
+
+  usernames << "mario"
+  usernames << "antoine"
+  usernames << "connie"
+  usernames << "elden"
+  usernames << "chauncey"
+  usernames << "elia"
+  usernames << "karen"
+  usernames << "jeramy"
+  usernames << "steven"
+  usernames << "murray"
+
+  usernames << "fabian"
+  usernames << "violette"
+  usernames << "christine"
+  usernames << "dung"
+  usernames << "judi"
+  usernames << "wilton"
+  usernames << "dylan"
+
+
+
 
 
   # 12.times do
