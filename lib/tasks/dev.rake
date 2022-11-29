@@ -42,6 +42,9 @@ task sample_data: :environment do
   usernames << "rodney"
   usernames << "lashunda"
   usernames << "jorge"
+  usernames << "lin"
+  usernames << "myrl"
+  usernames << "breanna"
 
 
   # 12.times do

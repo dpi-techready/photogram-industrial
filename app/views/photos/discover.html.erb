@@ -7,7 +7,7 @@
 
       <ul class="nav nav-pills nav-justified">
         <li class="nav-item">
-          <%= link_to "Posts", user_path(@user.username), class: "nav-link" %>
+          <%= link_to "Posts", user_path(@user.username), class: "nav-link"%>
         </li>
         <li class="nav-item">
           <%= link_to "Liked photos", liked_photos_path(@user.username), class: "nav-link"%>
@@ -16,20 +16,18 @@
           <%= link_to "Feed", feed_path(@user.username), class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <!--<a class="nav-link" href="#">Followers</a>-->
-          <%= link_to "Followers", followers_path(@user.username), class: "nav-link" %>
+          <a class="nav-link" href="#">Followers</a>
         </li>
         <li class="nav-item">
-          <!--<a class="nav-link" href="#">Following</a>-->
-          <%= link_to "Following", following_path(@user.username), class: "nav-link" %>
+          <a class="nav-link" href="#">Following</a>
         </li>
       </ul>
 
   </div>
 </div>  
 
-<%#= current_user.feed.count %>
+<%#= current_user.discover.count %>
 
-  <% current_user.feed.each do |photo| %>
+  <% current_user.discover.each do |photo| %>
     <%= render "photos/photo", giraffe: photo %>
   <% end %>    
