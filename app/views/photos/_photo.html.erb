@@ -1,0 +1,37 @@
+    <div class="row mb-4">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <%#= image_tag giraffe.image, skip_pipeline: true, class: "card-img-top" %>
+          <%= image_tag giraffe.image, class: "card-img-top" %>
+          <div class="card-body">
+            <!--<h5 class="card-title"><%#= photo.owner.username %></h5>-->
+            <h5 class="card-title"><%= giraffe.owner.username %></h5>
+            <!--<p class="card-text"><%#= photo.caption %></p>-->
+            <p class="card-text"><%= giraffe.caption %></p>
+          </div> 
+
+        <ul class="list-group list-group-flush"> 
+          <%# photo.comments.each do |comment| %>
+          <% giraffe.comments.each do |comment| %>
+            <li class="list-group-item">
+              <div class="media">
+                <!--<img class="rounded-circle" width="36" src="..." class="mr-2" alt="...">-->
+                <img class="rounded-circle mr-2" width="36" src="<%= comment.author.avatar %>"  alt="<%= comment.author.username %>">
+                <div class="media-body">
+                  <h5 class="mt-0"><%= comment.author.username %></h5>
+                  <p><%= comment.body %></p>
+                </div>
+              </div> 
+            </li>
+          <% end %>
+        </ul> 
+
+          <div class="card-body">
+            <%#= render "comments/form", comment: Comment.new(photo_id: photo.id) %>
+            <%#= render "comments/form", comment: photo.comments.build %>
+            <%= render "comments/form", comment: giraffe.comments.build %>
+          </div>  
+          
+        </div>
+      </div> 
+    </div>
